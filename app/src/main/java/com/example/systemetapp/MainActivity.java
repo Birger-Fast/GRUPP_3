@@ -11,20 +11,69 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 
+import com.example.systemetapp.domain.Product;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private List<Product> products;
+    private ListView listView;
+    private ArrayAdapter<Product> adapter;
+
+    private void createFakedProducts() {
+        products = new ArrayList<>();
+        Product p1 = new Product.Builder()
+                .alcohol(4.4)
+                .name("Pilsner Urquell")
+                .nr(1234)
+                .productGroup("Öl")
+                .type("Öl")
+                .volume(330).build();
+        Product p2 = new Product.Builder()
+                .alcohol(4.4)
+                .name("Baron Trenk")
+                .nr(1234)
+                .productGroup("Öl")
+                .type("Öl")
+                .volume(330).build();
+        products.add(p1);
+        products.add(p2);
+    }
+
+
+
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
+    private void setupListView() {
+        // look up a reference to the ListView object
+        listView = findViewById(R.id.product_list);
+
+        // create an adapter (with the faked products)
+        adapter = new ArrayAdapter<Product>(this,
+                android.R.layout.simple_list_item_1,
+                products);
+
+        // Set listView's adapter to the new adapter
+        listView.setAdapter(adapter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // set up faked products
+        createFakedProducts();
+        // setup listview (and friends)
+        setupListView();
     }
 
     @Override
@@ -128,4 +177,5 @@ public class MainActivity extends AppCompatActivity {
 
         // search for products later on :)
     }
+
 }
