@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(LOG_TAG, " cause: " + error.getCause().getMessage());
             }
         });
-
+        //Tjosan
         // Add the request to the RequestQueue.
         queue.add(jsonArrayRequest);
     }
