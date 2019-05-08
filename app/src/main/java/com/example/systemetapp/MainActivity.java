@@ -15,7 +15,17 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.systemetapp.domain.Product;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -158,6 +168,27 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+
+    private List<Product> jsonToProducts(JSONArray array) {
+        Log.d(LOG_TAG, "jsonToProducts()");
+        List<Product> productList = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                JSONObject row = array.getJSONObject(i);
+                String name = row.getString("name");
+                double alcohol = row.getDouble("alcohol");
+                double price = row.getDouble("price");
+                int volume = row.getInt("volume");
+
+                Product m = new Product(name, alcohol, price, volume);
+                productList .add(m);
+                Log.d(LOG_TAG, " * " + m);
+            } catch (JSONException e) {
+                ; // is ok since this is debug
+            }
+        }
+        return productList;
+    }
     private void searchProducts(Map<String, String> arguments) {
         // empty search string will give a lot of products :)
         String argumentString = "";
@@ -175,7 +206,31 @@ public class MainActivity extends AppCompatActivity {
         // print argument
         Log.d(LOG_TAG, " arguments: " + argumentString);
 
-        // search for products later on :)
-    }
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://rameau.sandklef.com:9090/search/products/all/" + argumentString;
+        Log.d(LOG_TAG, "Searching using url: " + url);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONArray>() {
 
+                    @Override
+                    public void onResponse(JSONArray array) {
+                        Log.d(LOG_TAG, "onResponse()");
+                        products.clear();
+                        products.addAll(jsonToProducts(array));
+                        adapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d(LOG_TAG, " cause: " + error.getCause().getMessage());
+            }
+        });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonArrayRequest);
+    }
 }
