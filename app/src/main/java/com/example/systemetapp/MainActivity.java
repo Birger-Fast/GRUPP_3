@@ -188,6 +188,27 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+
+    private List<Product> jsonToProducts(JSONArray array) {
+        Log.d(LOG_TAG, "jsonToProducts()");
+        List<Product> productList = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                JSONObject row = array.getJSONObject(i);
+                String name = row.getString("name");
+                double alcohol = row.getDouble("alcohol");
+                double price = row.getDouble("price");
+                int volume = row.getInt("volume");
+
+                Product m = new Product(name, alcohol, price, volume);
+                productList .add(m);
+                Log.d(LOG_TAG, " * " + m);
+            } catch (JSONException e) {
+                ; // is ok since this is debug
+            }
+        }
+        return productList;
+    }
     private void searchProducts(Map<String, String> arguments) {
         // empty search string will give a lot of products :)
         String argumentString = "";
@@ -223,14 +244,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }, new Response.ErrorListener() {
 
+
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d(LOG_TAG, " cause: " + error.getCause().getMessage());
             }
         });
-        //Tjosan
+
         // Add the request to the RequestQueue.
         queue.add(jsonArrayRequest);
     }
-
 }
