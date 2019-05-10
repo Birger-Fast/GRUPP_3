@@ -2,6 +2,7 @@
 package com.example.systemetapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -54,8 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 .productGroup("Öl")
                 .type("Öl")
                 .volume(330).build();
-        products.add(p1);
-        products.add(p2);
+
     }
 
     private List<Product> jsonToProducts(JSONArray array) {
@@ -99,6 +100,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button clear = findViewById(R.id.clearButton);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.i(LOG_TAG, "user clicked clear");
+                Intent clear = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(clear);
+                // setContentView(R.layout.activity_main);
+
+            }
+        });
+
+
 
         // set up faked products
         createFakedProducts();
@@ -189,26 +204,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private List<Product> jsonToProducts(JSONArray array) {
-        Log.d(LOG_TAG, "jsonToProducts()");
-        List<Product> productList = new ArrayList<>();
-        for (int i = 0; i < array.length(); i++) {
-            try {
-                JSONObject row = array.getJSONObject(i);
-                String name = row.getString("name");
-                double alcohol = row.getDouble("alcohol");
-                double price = row.getDouble("price");
-                int volume = row.getInt("volume");
 
-                Product m = new Product(name, alcohol, price, volume);
-                productList .add(m);
-                Log.d(LOG_TAG, " * " + m);
-            } catch (JSONException e) {
-                ; // is ok since this is debug
-            }
-        }
-        return productList;
-    }
     private void searchProducts(Map<String, String> arguments) {
         // empty search string will give a lot of products :)
         String argumentString = "";
