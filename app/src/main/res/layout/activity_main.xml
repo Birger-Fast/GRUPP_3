@@ -16,13 +16,16 @@
     <Button
         android:id="@+id/clearButton"
         style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="153dp"
-        android:layout_height="53dp"
+        android:layout_width="506dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
         android:backgroundTint="#0B500E"
-        android:text="Clear"
+        android:text="Rensa sökfält"
         android:textColor="#FFDB04"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="11dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp" />
 
 </android.support.constraint.ConstraintLayout>
