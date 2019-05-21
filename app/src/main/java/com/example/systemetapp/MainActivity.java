@@ -144,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void serchButtonOnClick(View v) {
+        showSearchDialog();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
