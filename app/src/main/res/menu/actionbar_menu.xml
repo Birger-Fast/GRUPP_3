@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/action_search"
-        android:title="Search">
-    </item>
+        android:iconTint="#FBF0C4"
+        android:title="Search"></item>
 
 
 

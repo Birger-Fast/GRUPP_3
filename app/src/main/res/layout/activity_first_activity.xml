@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBF0C4"
     tools:context=".first_activity">
 
     <Button
@@ -12,7 +13,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#4B9560"
+        android:backgroundTint="#CAE1D0"
         android:text="Jag är 20 år eller äldre"
         android:textColor="#F2F2F2"
         android:textSize="16sp"
@@ -30,7 +31,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#4B9560"
+        android:backgroundTint="#CAE1D0"
         android:text="Jag är under 20 år"
         android:textColor="#F2F2F2"
         android:textSize="16sp"
