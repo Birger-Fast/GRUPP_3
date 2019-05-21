@@ -38,16 +38,18 @@
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
             android:hint="minimum price, e g 12" />
+
         <EditText
             android:id="@+id/max_price_input"
-            android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
-            android:hint="maximum price, e g 19" />
+            android:backgroundTint="#FBF0C4"
+            android:hint="maximum price, e g 19"
+            android:inputType="numberDecimal" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
