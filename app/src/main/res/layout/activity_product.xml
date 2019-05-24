@@ -27,7 +27,7 @@
         android:id="@+id/product_alcohol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CAE1D0"
+        android:background="#FBF0C4"
         android:textSize="24sp" />
 
 

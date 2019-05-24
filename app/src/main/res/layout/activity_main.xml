@@ -10,9 +10,13 @@
         android:id="@+id/product_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearButton"></ListView>
+        Ändrafärg_v.2
+        android:background="#FBF0C4"
+        app:layout_constraintTop_toBottomOf="@+id/clearButton"
+        tools:layout_editor_absoluteX="-16dp"></ListView>
+
+      
+
 
     <Button
         android:id="@+id/clearButton"
@@ -22,9 +26,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
-        android:backgroundTint="#0B500E"
+        android:backgroundTint="#FBF0C4"
         android:text="Rensa sökfält"
-        android:textColor="#FFDB04"
+        android:textColor="#111110"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="2dp" />
