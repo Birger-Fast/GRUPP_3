@@ -9,16 +9,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <EditText
             android:id="@+id/name_input"
-            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
-            android:hint="name, eg Heineken" />
+            android:hint="Namn:"
+            android:inputType="text" />
+
         <EditText
             android:id="@+id/min_alco_input"
             android:layout_width="match_parent"
@@ -27,7 +29,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
-            android:hint="minimum alcohol, eg 4.0"
+            android:hint="Minimum alkoholhalt:"
             android:inputType="numberDecimal" />
 
         <EditText
@@ -38,7 +40,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
-            android:hint="maximum alcohol, e g 5.0"
+            android:hint="Maximum alkoholhalt:"
             android:inputType="numberDecimal" />
 
         <EditText
@@ -49,7 +51,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
-            android:hint="minimum price, e g 12"
+            android:hint="Minimum pris:"
             android:inputType="numberDecimal" />
 
         <EditText
@@ -61,7 +63,7 @@
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
             android:backgroundTint="#FBF0C4"
-            android:hint="maximum price, e g 19"
+            android:hint="Maximum pris:"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
