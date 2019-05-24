@@ -10,7 +10,7 @@
         android:id="@+id/product_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        Ändrafärg_v.2
+        android:layout_marginTop="8dp"
         android:background="#FBF0C4"
         app:layout_constraintTop_toBottomOf="@+id/clearButton"
         tools:layout_editor_absoluteX="-16dp"></ListView>
