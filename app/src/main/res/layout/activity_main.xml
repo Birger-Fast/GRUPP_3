@@ -8,14 +8,11 @@
 
     <ListView
         android:id="@+id/product_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="429dp"
+        android:layout_height="741dp"
         android:background="#FBF0C4"
-        app:layout_constraintTop_toBottomOf="@+id/clearButton"
-        tools:layout_editor_absoluteX="-16dp"></ListView>
-
-      
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="35dp"></ListView>
 
 
     <Button
@@ -23,15 +20,13 @@
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="506dp"
         android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
-        android:backgroundTint="#FBF0C4"
+        android:backgroundTint="#EDFBF0C4"
         android:text="Rensa sökfält"
         android:textColor="#111110"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="2dp" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
