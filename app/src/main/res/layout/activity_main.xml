@@ -26,9 +26,9 @@
         android:backgroundTint="#EDFBF0C4"
         android:text="Rensa sökfält"
         android:textColor="#111110"
+        app:layout_constraintBottom_toTopOf="@+id/product_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="2dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
