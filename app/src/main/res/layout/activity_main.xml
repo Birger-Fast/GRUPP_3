@@ -22,7 +22,7 @@
         android:layout_width="506dp"
         android:layout_height="35dp"
         android:background="@color/colorPrimary"
-        android:backgroundTint="#EDFBF0C4"
+        android:backgroundTint="#F5E9DDA8"
         android:text="Rensa sökfält"
         android:textColor="#111110"
         app:layout_constraintEnd_toEndOf="parent"
