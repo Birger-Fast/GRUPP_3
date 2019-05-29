@@ -50,10 +50,10 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_systembolaget_logo" />
+        app:srcCompat="@drawable/ic_resurs_1" />
 
     <TextView
         android:id="@+id/textView"
