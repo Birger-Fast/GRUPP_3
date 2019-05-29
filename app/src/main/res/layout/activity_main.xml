@@ -11,8 +11,9 @@
         android:layout_width="429dp"
         android:layout_height="741dp"
         android:background="#FBF0C4"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="35dp"></ListView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clearButton"></ListView>
 
 
     <Button
@@ -21,7 +22,7 @@
         android:layout_width="506dp"
         android:layout_height="35dp"
         android:background="@color/colorPrimary"
-        android:backgroundTint="#EDFBF0C4"
+        android:backgroundTint="#F5E9DDA8"
         android:text="Rensa sökfält"
         android:textColor="#111110"
         app:layout_constraintEnd_toEndOf="parent"
